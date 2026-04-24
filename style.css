@@ -1,0 +1,106 @@
+/* importanto a fonte (Open Sans) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* estilo geral*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff7ed;
+    font-family: "Open Sans";
+    height: 100vh;
+}
+
+
+/* estilo do cabeçalho*/
+
+.navbar {
+    padding: 40px 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffe0e7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.links {
+    width: 60px;
+    gap: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 70px;
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 195px;
+        margin-right: 25px;
+        width: auto;
+    }
+}
+
+a {
+    margin-top: 11%;
+    text-decoration: none;
+    font-family: Open Sans;
+    color: #ae3656;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 80%;
+}
+
+.botoes {
+    display: flex;
+    gap: 12%;
+
+    .vazado {
+        color: #ffe0e7;
+        font-weight: 700;
+        border-radius: 10px;
+        border: 1px solid #ae3656;
+        background-color: #ffe0e7;
+        padding: 5px 50px;
+    }
+
+    .preenchido {
+        color: white;
+        font-weight: 700;
+        background-color: #ae3656;
+        border: 1px solid;
+        border-radius: 10px;
+        padding: 10px 30px;
+        white-space: nowrap;
+    }
+
+    .preenchido a {
+        color: white;
+    }
+}
+
+/* titulo e subtitulo */
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    .boasvindas {
+        color: #ae3656;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .linha {
+        width: 90%;
+        margin: 20px auto;
+        border: none;
+        height: 3px;
+        background-color: #7a8fa6;
+    }
+
+}
