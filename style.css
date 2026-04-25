@@ -18,7 +18,7 @@ body {
 /* estilo do cabeçalho*/
 
 .navbar {
-    padding: 40px 4%;
+    padding: 30px 3%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,7 +39,7 @@ body {
     align-items: center;
 
     img {
-        height: 195px;
+        height: 100px;
         margin-right: 25px;
         width: auto;
     }
@@ -48,7 +48,6 @@ body {
 a {
     margin-top: 11%;
     text-decoration: none;
-    font-family: Open Sans;
     color: #ae3656;
     text-align: center;
     font-weight: bold;
@@ -83,24 +82,103 @@ a {
     }
 }
 
-/* titulo e subtitulo */
-
 .interface {
     max-width: 1280px;
     margin: 0 auto;
+}
 
-    .boasvindas {
-        color: #ae3656;
-        text-align: center;
-        margin-top: 40px;
-    }
+/* titulo e subtitulo */
+.boasvindas {
+    color: #ae3656;
+    text-align: center;
+    margin-top: 40px;
+}
 
-    .linha {
-        width: 90%;
-        margin: 20px auto;
-        border: none;
-        height: 3px;
-        background-color: #7a8fa6;
-    }
+.linha {
+    width: 90%;
+    margin: 20px auto;
+    border: none;
+    height: 3px;
+    background-color: #7a8fa6;
+}
 
+/* cards das receitas */
+.receitas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card p {
+    padding: 15px;
+    font-weight: bold;
+    color: #ae3656;
+    border-top: 3px solid #7a8fa6;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.footer{
+    background-color: #ffe0e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    margin-top: 60px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ladoEsquerdo{
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+.logo-sptech{
+    height: 50px;
+    margin-top: 50px;
+}
+
+
+.centro{
+    font-weight: bold;
+    color: #ae3656;
+}
+
+.ladoDireito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-sb{
+    height: 150px;
+}
+
+.redes {
+    display: flex;
+    gap: 10px;
+}
+
+.redes img {
+    height: 40px;
+    cursor: pointer;
 }
