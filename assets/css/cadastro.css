@@ -1,15 +1,18 @@
 /* importanto a fonte (Open Sans) */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-/* estilo geral*/
+/* estilo geral */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Open Sans";
 }
 
 body{
     background-color: #fff7ed;
-    font-family: "Open Sans";
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

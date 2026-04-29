@@ -1,46 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Bytes - Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
 </head>
 
 <body>
-    <div class="tela">
-        <div class="logo">
-            <img src="imagens/logo_pag03 png.png" class="logo">
-        </div><!--logo-->
+    <div class="container">
 
-        <div class="campo">
-            <p style="color: #944438;">Nome e Sobrenome:</p>
-            <input type="text" id="inpt_nome" placeholder="Insira seu nome completo"> <br><br>
-        </div><!--campo-->
+        <div class="imagem">
+            <img src="assets/imagens/img cadastro_login.webp" alt="">
+        </div><!--imagem-->
 
-        <div class="campo">
-            <p style="color: #944438;">Email:</p>
-            <input type="text" id="inpt_email" placeholder="Insira seu email"> <br><br>
-        </div><!--campo-->
+        <div class="form">
+            <form action="">
+                <div class="inputs">
+                    <div class="campo">
+                        <label for="inpt_nome">Nome e sobrenome:</label>
+                        <input type="text" id="inpt_nome" placeholder="Insira seu nome completo">
+                    </div><!--campo-->
 
-        <div class="campo">
-           <p style="color: #944438;"> Data de Nascimento:</p>
-            <input type="text" id="inpt_dtNasc" placeholder="dd/mm/aaaa"><br><br>
-        </div><!--campo-->
+                    <div class="campo">
+                        <label for="inpt_email">Email</label>
+                        <input type="text" id="inpt_email" placeholder="Insira seu email">
+                    </div><!--campo-->
 
-        <div class="campo">
-            <p style="color: #944438;">Senha:</p>
-            <input type="text" id="inpt_senha" placeholder="Crie uma senha"><br><br>
-        </div><!--campo-->
+                    <div class="campo">
+                        <label for="inpt_dtNasc">Data de Nascimento:</label>
+                        <input type="text" id="inpt_dtNasc" placeholder="dd/mm/aaaa">
+                    </div><!--campo-->
 
-        <div class="botao">
-            <button>Cadastre-se</button><br>
-        </div><!--botao-->
+                    <div class="campo">
+                        <label for="inpt_senha">Senha:</label>
+                        <input type="password" id="inpt_senha" placeholder="Crie uma senha">
+                    </div><!--campo-->
+                </div><!--inputs-->
 
-        <div class="jaPossui">
-            <p>Já tem conta? <a href="#">Logar-se</a></p>
-        </div><!--jaPossui-->
-    </div><!--tela-->
+                <div class="botao">
+                    <div class="cadastro">
+                        <button><a href="#">Cadastre-se</a></button>
+                    </div><!--cadastro-->
+                </div><!--botao-->
+
+                <div class="jaPossui">
+                    <p>Já possui conta?<a href="login.html"> Logar-se</a></p>
+                </div>
+            </form>
+        </div><!--form-->
+
+    </div><!--container-->
+
 </body>
 
 </html>

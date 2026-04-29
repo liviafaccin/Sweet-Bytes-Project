@@ -14,8 +14,7 @@ body {
     height: 100vh;
 }
 
-
-/* estilo do cabeçalho*/
+/* CABEÇALHO */
 
 .navbar {
     padding: 20px 2%;
@@ -26,64 +25,93 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* área dos links da navbar */
 .links {
-    width: 60px;
-    gap: 20%;
     display: flex;
     align-items: center;
+    gap: 40px;
+
 }
 
+/* logo */
 .logo {
     height: 70px;
     display: flex;
     align-items: center;
-
-    img {
-        height: 100px;
-        margin-right: 25px;
-        width: auto;
-    }
 }
 
-a {
-    margin-top: 11%;
+/* imagem da logo */
+.logo img {
+    height: 100px;
+    margin-right: 25px;
+    width: auto;
+}
+
+/* links da navbar */
+.links a {
     text-decoration: none;
     color: #ae3656;
-    text-align: center;
     font-weight: bold;
-    margin-right: 80%;
+
 }
+
+/* efeito quando passar o mouse */
+.links a:hover {
+    color: #7a8fa6;
+}
+
+/* BOTÕES DA NAVBAR */
 
 .botoes {
     display: flex;
-    gap: 12%;
-    margin-right: 20px;
+    gap: 15px;
 
-    .vazado {
-        color: #ffe0e7;
-        font-weight: 700;
-        border-radius: 10px;
-        border: 1px solid #ae3656;
-        background-color: #ffe0e7;
-        padding: 5px 50px;
-    }
-
-    .preenchido {
-        color: white;
-        font-weight: 700;
-        background-color: #ae3656;
-        border: 1px solid;
-        border-radius: 10px;
-        padding: 10px 30px;
-        white-space: nowrap;
-    }
-
-    .preenchido a {
-        color: white;
-    }
+    /* remove as bolinhas da lista (tag li) */
+    list-style: none;
 }
 
-/* titulo e subtitulo */
+.botoes a {
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 700;
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+/* botão vazado */
+.vazado {
+    color: #ae3656;
+    border: 1px solid #ae3656;
+    background-color: #ffe0e7;
+
+    padding: 10px 35px;
+}
+
+/* efeito hover */
+.vazado:hover {
+    background-color: #ffd1dc;
+}
+
+/* botão preenchido */
+.preenchido {
+    color: white;
+    background-color: #ae3656;
+
+    padding: 10px 25px;
+}
+
+/* efeito hover */
+.preenchido:hover {
+    background-color: #922b48;
+}
+
+/* TÍTULO E SUBTÍTULO */
+
 .boasvindas {
     color: #ae3656;
     text-align: center;
@@ -98,15 +126,18 @@ a {
     background-color: #7a8fa6;
 }
 
-/* cards das receitas */
+/* CARDS DAS RECEITAS */
+
 .receitas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+
+    /* 3 colunas */
+    grid-template-columns: repeat(3, 1fr);
+
     gap: 40px;
     margin-top: 40px;
     margin-left: 70px;
     margin-right: 70px;
-    width: 30;
 }
 
 .card {
@@ -130,46 +161,51 @@ a {
     border-top: 3px solid #7a8fa6;
 }
 
+/* animação do card */
 .card:hover {
     transform: translateY(-5px);
 }
 
-.footer{
+/* FOOTER (PARTE FINAL DA HOME)*/
+.footer {
     background-color: #ffe0e7;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 20px 40px;
     margin-top: 80px;
+
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
     max-width: 100%;
 }
 
-.ladoEsquerdo{
+.ladoEsquerdo {
     font-size: 15px;
     color: #333;
     font-weight: bold;
 }
 
-.logo-sptech{
+.logo-sptech {
     height: 50px;
     margin-top: 50px;
 }
 
-
-.centro{
+.centro {
     font-weight: bold;
     color: #ae3656;
 }
 
-.ladoDireito{
+.ladoDireito {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 
-.logo-sb{
+.logo-sb {
     height: 150px;
 }
 
