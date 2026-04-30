@@ -9,10 +9,86 @@
     font-family: "Open Sans";
 }
 
-body{
+body {
     background-color: #fff7ed;
+    font-family: "Open Sans";
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* CONTAINER PRINCIPAL */
+.container{
+    width: 65%;
+    height: 85vh;
+    background-color: #ffe0e7;
+    border-radius: 30px;
+}
+
+/* IMAGEM */
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.logo img{
+    height: 95px;
+}
+
+/* FORMULARIO */
+.form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.campo{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label{
+    font-size: 18px;
+    font-weight: 700;
+    color: #8B3E2F;
+    margin-bottom: 8px;
+}
+
+.campo input{
+    height: 55px;
+    border-radius: 40px;
+    border: 3px solid #D1849A;
+    background-color: transparent;
+    padding-left: 20px;
+    font-size: 18px;
+    outline: none;
+}
+
+.campo input::placeholder{
+    color: #9B8E8E;
+
+    font-weight: 600;
+}
+
+.botao{
+    margin-top: 30px;
 }
