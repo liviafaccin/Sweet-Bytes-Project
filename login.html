@@ -39,7 +39,7 @@
                 </div><!--inputs-->
 
                 <div class="botao">
-                        <a href="#" class="login">Entre</a>
+                        <a href="#" class="login" onclick="logar()">Entre</a>
                 </div><!--botao-->
 
                 <div class="naoPossui">
@@ -51,5 +51,20 @@
     </div><!--container-->
 
 </body>
+<script>
+    function logar() {
+        let campos = [inpt_email.value, inpt_senha.value];
+        let campoVazio = false;
 
+        for(let indice = 0; indice < campos.length; indice++){
+            if(campos[indice] == ''){
+                campoVazio = true;
+            }
+        }
+
+        if(campoVazio == true){
+            alert('ⓘ Todos os campos devem ser preenchidos')
+        }
+    }
+</script>
 </html>
