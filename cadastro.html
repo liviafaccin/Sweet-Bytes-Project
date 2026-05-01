@@ -33,7 +33,7 @@
                     </div><!--campo-->
 
                     <div class="campo">
-                        <label for="inpt_email">Email</label>
+                        <label for="inpt_email">Email:</label>
                         <input type="text" id="inpt_email" placeholder="Insira seu email">
                     </div><!--campo-->
 
@@ -49,7 +49,7 @@
                 </div><!--inputs-->
 
                 <div class="botao">
-                    <a href="#" class="cadastro">Cadastre-se</a>
+                    <a href="#" class="cadastro" onclick="cadastrar()">Cadastre-se</a>
                 </div><!--botao-->
 
                 <div class="jaPossui">
@@ -61,5 +61,21 @@
     </div><!--container-->
 
 </body>
+<script>
+    function cadastrar() {
+        let campos = [inpt_nome.value, inpt_email.value, inpt_dtNasc.value, inpt_senha.value];
+        let campoVazio = false;
+
+        for(let indice = 0; indice < campos.length; indice++){
+            if(campos[indice] == ''){
+                campoVazio = true;
+            }
+        }
+
+        if(campoVazio == true){
+            alert('ⓘ Todos os campos devem ser preenchidos')
+        }
+    }
+</script>
 
 </html>
