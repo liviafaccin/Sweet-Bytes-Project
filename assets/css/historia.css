@@ -1,0 +1,109 @@
+/* importanto a fonte (Open Sans) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* estilo geral*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff7ed;
+    font-family: "Open Sans";
+    height: 100vh;
+}
+
+/* CABEÇALHO */
+
+.navbar {
+    padding: 20px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffe0e7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* área dos links da navbar */
+.links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+}
+
+/* logo */
+.logo {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+/* imagem da logo */
+.logo img {
+    height: 90px;
+    margin-right: 25px;
+    width: auto;
+}
+
+/* links da navbar */
+.links a {
+    text-decoration: none;
+    color: #ae3656;
+    font-weight: bold;
+}
+
+/* efeito quando passar o mouse */
+.links a:hover {
+    color: #7a8fa6;
+    transform: scale(1.03);
+}
+
+/* BOTÕES DA NAVBAR */
+
+.botoes {
+    display: flex;
+    gap: 15px;
+
+    /* remove as bolinhas da lista (tag li) */
+    list-style: none;
+}
+
+.botoes a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    border-radius: 20px;
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px rgba(174, 54, 86, 0.4);
+}
+
+/* botão vazado */
+.vazado {
+    color: #ae3656;
+    border: 1px solid #ae3656;
+    background-color: #ffe0e7;
+    padding: 7px 35px;
+}
+
+/* efeito hover */
+.vazado:hover {
+    background-color: #ffd1dc;
+    transform: scale(1.03);
+}
+
+/* botão preenchido */
+.preenchido {
+    color: white;
+    background-color: #ae3656;
+    padding: 7px 25px;
+}
+
+/* efeito hover */
+.preenchido:hover {
+    background-color: #922b48;
+    transform: scale(1.03);
+}
