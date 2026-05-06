@@ -107,3 +107,113 @@ body {
     background-color: #922b48;
     transform: scale(1.03);
 }
+
+/* VIDEO */
+.video {
+    display: flex;
+    justify-content: center;
+}
+
+.video video {
+    width: 85%;
+    border-radius: 30px;
+}
+
+/* MISSÃO */
+.missao {
+    width: 85%;
+    margin: 80px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+/* texto */
+.texto-missao {
+    width: 45%;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.titulo img {
+    height: 40px;
+}
+
+.titulo h1 {
+    color: #000;
+    font-size: 45px;
+}
+
+.texto-missao p {
+    font-size: 25px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #1d1d1d;
+}
+
+/* imagem */
+
+.imagem-missao {
+    position: relative;
+    width: 40%;
+}
+
+.imagem-missao img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* card rosa */
+
+.card-frase {
+    position: absolute;
+    bottom: -40px;
+    right: -30px;
+
+    background-color: #ffdce6;
+    padding: 25px;
+
+    width: 250px;
+
+    border-radius: 25px;
+
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-frase p {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+/* HISTORIA */
+
+.historia {
+    width: 90%;
+    margin: 120px auto;
+}
+
+.historia h1 {
+    text-align: center;
+    color: #9d4a3f;
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+.container-historia {
+    width: 100%;
+    height: 700px;
+
+    background-color: #fffaf5;
+
+    border-radius: 40px;
+
+    box-shadow: 0px 0px 30px rgba(255, 192, 203, 0.3);
+}

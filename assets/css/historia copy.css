@@ -108,110 +108,15 @@ body {
     transform: scale(1.03);
 }
 
-/* TÍTULO E SUBTÍTULO */
-
-.boasvindas {
-    color: #ae3656;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.linha {
-    width: 75%;
-    margin: 20px auto;
-    border: none;
-    height: 3px;
-    background-color: #7a8fa6;
-}
-
-/* CARDS DAS RECEITAS */
-
-.receitas {
-    display: grid;
-
-    /* 3 colunas */
-    grid-template-columns: repeat(3, 300px);
+.video{
+    display: flex;
     justify-content: center;
-    gap: 35px;
-    margin-top: 40px;
-
-}
-
-.card {
-    background-color: #ffffff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transition: 0.3s;
-}
-
-.card img {
+    align-items: center;
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    margin-top: 100px;
 }
 
-.card p {
-    padding: 15px;
-    font-weight: bold;
-    color: #ae3656;
-    border-top: 3px solid #7a8fa6;
-}
-.card a{
-    text-decoration: none;
-}
-/* animação do card */
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* FOOTER (PARTE FINAL DA HOME)*/
-.footer {
-    background-color: #ffe0e7;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    margin-top: 80px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    max-width: 100%;
-}
-
-.ladoEsquerdo {
-    font-size: 15px;
-    color: #333;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(174, 54, 86, 0.4);
-}
-
-.logo-sptech {
-    height: 50px;
-    margin-top: 50px;
-}
-
-.centro {
-    font-weight: bold;
-    color: #ae3656;
-    text-shadow: 2px 2px 4px rgba(174, 54, 86, 0.4);
-}
-
-.ladoDireito {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-sb {
-    height: 150px;
-}
-
-.redes {
-    display: flex;
-    gap: 10px;
-}
-
-.redes img {
-    height: 40px;
-    cursor: pointer;
+video{
+    width: 100%;
+    height: 100%;
 }
