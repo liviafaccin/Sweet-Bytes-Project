@@ -8,6 +8,27 @@
 </head>
 
 <body>
+    <div class="navbar">
+        <div class="links">
+            <div class="logo">
+                <img src="assets/imagens/logo principal.png" alt="">
+            </div>
+            <a class="inicio" href="index.html">Home</a>
+            <a class="historia" href="nossaHistoria.html">Nossa História</a>
+            <a class="quiz" href="quiz.html">Quiz</a>
+            <a class="dash" href="dashboard.html">Dashboard</a>
+        </div><!--links-->
+
+        <ul class="botoes">
+            <li>
+                <a href="login.html" class="vazado">Entre</a>
+            </li>
+
+            <li>
+                <a href="cadastro.html" class="preenchido">Cadastre-se</a>
+            </li>
+        </ul><!--botoes-->
+    </div> <!--navbar-->
     <div class="inicio">
         <div class="titulo">
             <h1>Qual é o seu perfil doce?</h1>
@@ -23,57 +44,87 @@
     <div class="perguntas">
         <div class="primeira">
             <p>1. Para quem você mais cozinha?</p>
-            <input name="p1" type="radio" id="inpt_familia"> <label for="inpt_familia">Familía</label>
-            <input name="p1" type="radio" id="inpt_clientes"><label for="inpt_clientes">Clientes</label>
-            <input name="p1" type="radio" id="inpt_amigos"><label for="inpt_amigos">Amigos</label>
-            <input name="p1" type="radio" id="inpt_paraMim"><label for="inpt_paraMim">Para mim</label>
-            <input name="p1" type="radio" id="inpt_redesSociais"><label for="inpt_redesSociais">Redes Sociais</label>
+            <select id="select_p1">
+                <option>Selecione uma opção</option>
+                <option>Familía</option>
+                <option>Clientes</option>
+                <option>Amigos</option>
+                <option>Para mim</option>
+                <option>Redes Sociais</option>
+            </select>
         </div><!--primeira--><br>
 
         <div class="segunda">
             <p>2. O que mais te atrai na confeitaria?</p>
-            <input name="p2" type="radio" id="inpt_felizes"><label for="inpt_felizes">Ver as pessoas felizes</label>
-            <input name="p2" type="radio" id="inpt_vender"><label for="inpt_vender">Vender receitas</label>
-            <input name="p2" type="radio" id="inpt_relaxar"><label for="inpt_relaxar">Relaxar</label>
-            <input name="p2" type="radio" id="inpt_facilidade"><label for="inpt_facilidade">Facilidade</label>
-            <input name="p2" type="radio" id="inpt_redesSociais"><label for="inpt_redesSociais">Redes Sociais</label>
+            <select id="select_p2">
+                <option>Selecione uma opção</option>
+                <option>Ver as pessoas felizes</option>
+                <option>Decorar doces</option>
+                <option>Vender receitas</option>
+                <option>Relaxar</option>
+                <option>Facilidade</option>
+            </select>
         </div><!--segunda--><br>
 
         <div class="terceira">
             <p>3. Qual receita você escolheria?</p>
-            <input name="p1" type="radio" id="inpt_boloVo"><label for="inpt_boloVo">Bolo de vó</label>
-            <input name="p1" type="radio" id="inpt_estiloso"><label for="inpt_estiloso">Bento cake estiloso</label>
-            <input name="p1" type="radio" id="inpt_vender"><label for="inpt_vender">Brownie para vender</label>
-            <input name="p1" type="radio" id="inpt_fit"><label for="inpt_fit">Cookie fit</label>
-            <input name="p1" type="radio" id="inpt_15min"><label for="inpt_15min">Receita de 15 minutos</label>
+            <select id="select_p3">
+                <option>Selecione uma opção</option>
+                <option>Bolo de vó</option>
+                <option>Bento cake estiloso</option>
+                <option>Brownie para vender</option>
+                <option>Cookie fit</option>
+                <option>Receita de 15 minutos</option>
+            </select>
         </div><!--terceira--><br>
 
         <div class="quarta">
             <p>4. Como você se sente cozinhando?</p>
-            <input name="p1" type="radio" id="inpt_amado"><label for="inpt_amado">Amado(a)</label>
-            <input name="p1" type="radio" id="inpt_inspirado"><label for="inpt_inspirado">Inspirado(a)</label>
-            <input name="p1" type="radio" id="inpt_motivado"><label for="inpt_motivado">Motivado(a)</label>
-            <input name="p1" type="radio" id="inpt_paz"><label for="inpt_paz">Em paz</label>
-            <input name="p1" type="radio" id="inpt_produtivo"><label for="inpt_produtivo">Produtivo</label>
+            <select id="select_p4">
+                <option>Selecione uma opção</option>
+                <option>Amado(a)</option>
+                <option>Inspirado(a)</option>
+                <option>Motivado(a)</option>
+                <option>Em paz</option>
+                <option>Produtivo(a)</option>
+            </select>
         </div><!--quarta--><br>
 
         <div class="quinta">
             <p>5. O que seria a cozinha perfeita pra você?</p>
-            <input name="p1" type="radio" id="inpt_cheiaFamilia"><label for="inpt_cheiaFamilia">Cheia de família</label>
-            <input name="p1" type="radio" id="inpt_moderna"><label for="inpt_moderna">Moderna e estética</label>
-            <input name="p1" type="radio" id="inpt_negocio"><label for="inpt_negocio">Um negócio de sucesso</label>
-            <input name="p1" type="radio" id="inpt_tranquila"><label for="inpt_tranquila">Tranquila e
-                aconchegante</label>
-            <input name="p1" type="radio" id="inpt_organizada"><label for="inpt_organizada">Organizada e rápida</label>
+            <select id="select_p5">
+                <option>Selecione uma opção</option>
+                <option>Cheia de família</option>
+                <option>Moderna e estética</option>
+                <option>Um negócio de sucesso</option>
+                <option>Tranquila e aconchegante</option>
+                <option>Organizada e rápida</option>
+            </select>
         </div><!--quinta--><br>
 
         <div class="resultado">
-            <a href="#"><button ver()>Ver Resultado</button></a>
+            <button onclick="ver()">Ver Resultado</button>
         </div>
     </div><!--perguntas-->
 </body>
 <script>
     function ver() {
+        let primeira = select_p1.value
+        let segunda = select_p1.value
+        let terceira = select_p1.value
+        let quarta = select_p1.value
+        let quinta = select_p1.value
+
+        // perfis
+        let afetivo = 0;
+        let criativo = 0;
+        let empreendedor = 0;
+        let wellness = 0
+        let praticidade = 0
+
+        if(primeira == 'Família' || segunda == 'Ver as pessoa felizes'){
+            afetivo++
+        }
     }
 </script>
 
