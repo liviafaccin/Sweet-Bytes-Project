@@ -1,0 +1,217 @@
+/* importanto a fonte (Open Sans) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* estilo geral*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff7ed;
+    font-family: "Open Sans";
+    height: 100vh;
+}
+
+/* NAV */
+
+.navbar {
+    padding: 20px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffe0e7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* área dos links da navbar */
+.links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+}
+
+/* logo */
+.logo {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+/* imagem da logo */
+.logo img {
+    height: 90px;
+    margin-right: 25px;
+    width: auto;
+}
+
+/* links da navbar */
+.links a {
+    text-decoration: none;
+    color: #ae3656;
+    font-weight: bold;
+}
+
+/* efeito quando passar o mouse */
+.links a:hover {
+    color: #7a8fa6;
+    transform: scale(1.03);
+}
+
+/* BOTÕES DA NAVBAR */
+
+.botoes {
+    display: flex;
+    gap: 15px;
+
+    /* remove as bolinhas da lista (tag li) */
+    list-style: none;
+}
+
+.botoes a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    border-radius: 20px;
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px rgba(174, 54, 86, 0.4);
+}
+
+/* botão vazado */
+.vazado {
+    color: #ae3656;
+    border: 1px solid #ae3656;
+    background-color: #ffe0e7;
+    padding: 7px 35px;
+}
+
+/* efeito hover */
+.vazado:hover {
+    background-color: #ffd1dc;
+    transform: scale(1.03);
+}
+
+/* botão preenchido */
+.preenchido {
+    color: white;
+    background-color: #ae3656;
+    padding: 7px 25px;
+}
+
+/* efeito hover */
+.preenchido:hover {
+    background-color: #922b48;
+    transform: scale(1.03);
+}
+
+/* TÍTULO E SUBTÍTULO */
+
+.boasvindas {
+    color: #ae3656;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.linha {
+    width: 75%;
+    margin: 20px auto;
+    border: none;
+    height: 3px;
+    background-color: #7a8fa6;
+}
+
+/* CARDS DAS RECEITAS */
+
+.receitas {
+    display: grid;
+
+    /* 3 colunas */
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+    gap: 35px;
+    margin-top: 40px;
+
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card p {
+    padding: 15px;
+    font-weight: bold;
+    color: #ae3656;
+    border-top: 3px solid #7a8fa6;
+}
+.card a{
+    text-decoration: none;
+}
+/* animação do card */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* FOOTER (PARTE FINAL DA HOME)*/
+.footer {
+    background-color: #ffe0e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    margin-top: 80px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 100%;
+}
+
+.ladoEsquerdo {
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(174, 54, 86, 0.4);
+}
+
+.logo-sptech {
+    height: 50px;
+    margin-top: 50px;
+}
+
+.centro {
+    font-weight: bold;
+    color: #ae3656;
+    text-shadow: 2px 2px 4px rgba(174, 54, 86, 0.4);
+}
+
+.ladoDireito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-sb {
+    height: 150px;
+}
+
+.redes {
+    display: flex;
+    gap: 10px;
+}
+
+.redes img {
+    height: 40px;
+    cursor: pointer;
+}

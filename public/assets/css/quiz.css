@@ -1,0 +1,205 @@
+/* importanto a fonte (Open Sans) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* estilo geral*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff7ed;
+    font-family: "Open Sans";
+    height: 100vh;
+}
+
+/* NAV */
+
+.navbar {
+    padding: 20px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffe0e7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* área dos links da navbar */
+.links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+}
+
+/* logo */
+.logo {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+/* imagem da logo */
+.logo img {
+    height: 90px;
+    margin-right: 25px;
+    width: auto;
+}
+
+/* links da navbar */
+.links a {
+    text-decoration: none;
+    color: #ae3656;
+    font-weight: bold;
+}
+
+/* efeito quando passar o mouse */
+.links a:hover {
+    color: #7a8fa6;
+    transform: scale(1.03);
+}
+
+/* BOTÕES DA NAVBAR */
+
+.botoes {
+    display: flex;
+    gap: 15px;
+
+    /* remove as bolinhas da lista (tag li) */
+    list-style: none;
+}
+
+.botoes a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    border-radius: 20px;
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px rgba(174, 54, 86, 0.4);
+}
+
+/* botão vazado */
+.vazado {
+    color: #ae3656;
+    border: 1px solid #ae3656;
+    background-color: #ffe0e7;
+    padding: 7px 35px;
+}
+
+/* efeito hover */
+.vazado:hover {
+    background-color: #ffd1dc;
+    transform: scale(1.03);
+}
+
+/* botão preenchido */
+.preenchido {
+    color: white;
+    background-color: #ae3656;
+    padding: 7px 25px;
+}
+
+/* efeito hover */
+.preenchido:hover {
+    background-color: #922b48;
+    transform: scale(1.03);
+}
+
+/* TITULO E PARAGRAFOS */
+
+.inicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    margin-top: 40px;
+    color: #ae3656;
+}
+
+.paragrafos{
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ae3656;
+}
+ 
+/* SELECTS */
+
+.perguntas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 40px auto;
+    gap: 20px;
+}
+ 
+.perguntas > div {
+    width: 100%;
+}
+ 
+.perguntas p {
+    font-weight: 700;
+    color: #8B3E2F;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+ 
+.perguntas select {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+    border-radius: 40px;
+    border: 3px solid #D1849A;
+    background-color: #fff7ed;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-weight: 600;
+    color: #9B8E8E;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+ 
+/* Muda a cor da borda quando o usuário clica no select */
+.perguntas select:focus {
+    border-color: #ae3656;
+    color: #8B3E2F;
+}
+ 
+/* BOTAO PARA VER O RESULTADO */
+.resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+ 
+.resultado button {
+    background-color: #ae3656;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 35px;
+    color: white;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(174, 54, 86, 0.4);
+    transition: 0.3s;
+}
+ 
+/* Efeito quando passa o mouse no botão */
+.resultado button:hover {
+    background-color: #922b48;
+    transform: scale(1.03);
+}
+ 

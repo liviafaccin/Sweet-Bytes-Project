@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Bytes - Quiz</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="links">
+            <div class="logo">
+                <img src="assets/imagens/logo principal.png" alt="">
+            </div>
+            <a class="inicio" href="index.html">Home</a>
+            <a class="historia" href="nossaHistoria.html">Nossa História</a>
+            <a class="quiz" href="quiz.html">Quiz</a>
+            <a class="dash" href="dashboard.html">Dashboard</a>
+        </div><!--links-->
+
+        <ul class="botoes">
+            <li>
+                <a href="login.html" class="vazado">Entre</a>
+            </li>
+
+            <li>
+                <a href="cadastro.html" class="preenchido">Cadastre-se</a>
+            </li>
+        </ul><!--botoes-->
+    </div> <!--navbar-->
+    <div class="inicio">
+        <div class="titulo">
+            <h1>Qual é o seu perfil doce?</h1>
+        </div><!--titulo-->
+        <div class="paragrafos">
+            <p>Cada pessoa possui uma forma única de se conectar com a confeitaria.</p>
+            <p>Alguns cozinham para demonstrar amor, outros para relaxar, criar ou até empreender.</p>
+            <p>Responda às perguntas e descubra qual estilo combina mais com você</p>
+        </div><!--paragrafos-->
+
+    </div><!--inicio-->
+
+    <div class="perguntas">
+        <div class="primeira">
+            <p>1. Para quem você mais cozinha?</p>
+            <select id="select_p1">
+                <option value="#">Selecione uma opção</option>
+                <option>Família</option>
+                <option>Redes Sociais</option>
+                <option>Clientes</option>
+                <option>Amigos</option>
+                <option>Para mim</option>
+            </select>
+        </div><!--primeira--><br>
+
+        <div class="segunda">
+            <p>2. O que mais te atrai na confeitaria?</p>
+            <select id="select_p2">
+                <option value="#">Selecione uma opção</option>
+                <option value="felizes">Ver as pessoas felizes</option>
+                <option value="decorar">Decorar doces</option>
+                <option value="vender">Vender receitas</option>
+                <option>Relaxar</option>
+                <option>Facilidade</option>
+            </select>
+        </div><!--segunda--><br>
+
+        <div class="terceira">
+            <p>3. Qual receita você escolheria?</p>
+            <select id="select_p3">
+                <option value="#">Selecione uma opção</option>
+                <option value="vo">Bolo de vó</option>
+                <option value="cake">Bento cake estiloso</option>
+                <option value="venda">Brownie para vender</option>
+                <option value="fit">Cookie fit</option>
+                <option value="15min">Receita de 15 minutos</option>
+            </select>
+        </div><!--terceira--><br>
+
+        <div class="quarta">
+            <p>4. Como você se sente cozinhando?</p>
+            <select id="select_p4">
+                <option value="#">Selecione uma opção</option>
+                <option>Amado(a)</option>
+                <option>Inspirado(a)</option>
+                <option>Motivado(a)</option>
+                <option>Em paz</option>
+                <option>Produtivo(a)</option>
+            </select>
+        </div><!--quarta--><br>
+
+        <div class="quinta">
+            <p>5. O que seria a cozinha perfeita pra você?</p>
+            <select id="select_p5">
+                <option value="#">Selecione uma opção</option>
+                <option value="cheia">Cheia de família</option>
+                <option value="moderna">Moderna e estética</option>
+                <option value="sucesso">Um negócio de sucesso</option>
+                <option value="tranquila">Tranquila e aconchegante</option>
+                <option value="organizada">Organizada e rápida</option>
+            </select>
+        </div><!--quinta--><br>
+
+        <div class="resultado">
+            <button onclick="ver()">Ver Resultado</button>
+        </div>
+    </div><!--perguntas-->
+</body>
+<script>
+    function ver() {
+        // selects
+        let primeira = select_p1.value
+        let segunda = select_p2.value
+        let terceira = select_p3.value
+        let quarta = select_p4.value
+        let quinta = select_p5.value
+
+        // perfis
+        let afetivo = 0;
+        let criativo = 0;
+        let empreendedor = 0;
+        let wellness = 0;
+        let praticidade = 0;
+
+        // perfil do usuario
+        let vencedor = '';
+
+        // cenário errado
+        if (primeira == '#' || segunda == '#' || terceira == '#' || quarta == '#' || quinta == '#') {
+            alert('Insira valores válidos');
+            return;
+
+        }
+
+        // perfil afetivo
+        if (primeira == 'Família') { afetivo++; }
+        if (primeira == 'Amigos') { afetivo++; }
+        if (segunda == 'felizes') { afetivo++; }
+        if (terceira == 'vo') { afetivo++; }
+        if (quarta == 'Amado(a)') { afetivo++; }
+        if (quinta == 'cheia') { afetivo++; }
+
+        // perfil criativo
+        if (primeira == 'Redes Sociais') { criativo++; }
+        if (segunda == 'decorar') { criativo++; }
+        if (terceira == 'cake') { criativo++; }
+        if (quarta == 'Inspirado(a)') { criativo++; }
+        if (quinta == 'moderna') { criativo++; }
+
+        // perfil empreendedor
+        if (primeira == 'Clientes') { empreendedor++; }
+        if (segunda == 'vender') { empreendedor++; }
+        if (terceira == 'venda') { empreendedor++; }
+        if (quarta == 'Motivado(a)') { empreendedor++; }
+        if (quinta == 'negocio') { empreendedor++; }
+
+        // perfil wellness
+        if (primeira == 'Para mim') { wellness++; }
+        if (segunda == 'Relaxar') { wellness++; }
+        if (terceira == 'fit') { wellness++; }
+        if (quarta == 'Em paz') { wellness++; }
+        if (quinta == 'tranquila') { wellness++; }
+
+        // perfil praticidade
+        if (segunda == 'Facilidade') { praticidade++; }
+        if (terceira == '15min') { praticidade++; }
+        if (quarta == 'Produtivo(a)') { praticidade++; }
+        if (quinta == 'organizada') { praticidade++; }
+
+
+
+        // vencedor
+
+        if (afetivo >= criativo && afetivo >= empreendedor && afetivo >= wellness && afetivo >= praticidade) {
+            vencedor = 'Confeiteiro afetivo';
+
+        } else if (criativo >= afetivo && criativo >= empreendedor && criativo >= wellness && criativo >= praticidade) {
+            vencedor = ' Chef Criativo';
+
+        } else if (empreendedor >= afetivo && empreendedor >= criativo && empreendedor >= wellness && empreendedor >= praticidade) {
+            vencedor = 'Doce Empreendedor';
+
+        } else if (wellness >= afetivo && wellness >= criativo && wellness >= empreendedor && wellness >= praticidade) {
+            vencedor = 'Confeiteiro Wellness';
+
+        } else {
+            vencedor = 'Mestre da Praticidade';
+        }
+
+        // salva no localStorage para a dashboard ler
+        localStorage.setItem('perfilDoce', vencedor);
+    }
+
+</script>
+
+</html>

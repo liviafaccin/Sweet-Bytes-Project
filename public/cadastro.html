@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Bytes - Cadastro</title>
+    <link rel="stylesheet" href="assets/css/cadastro.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="voltar">
+            <a href="index.html">
+                <img src="assets/imagens/img-seta.png" alt="">
+            </a>
+            <p>
+                <a href="index.html">Voltar</a>
+            </p>
+        </div>
+
+        <div class="logo">
+            <img src="assets/imagens/logo_pag03 png.png" alt="">
+        </div>
+
+        <div class="form">
+            <form action="">
+                <div class="inputs">
+                    <div class="campo">
+                        <label for="inpt_nome">Nome e sobrenome:</label>
+                        <input type="text" id="inpt_nome" placeholder="Insira seu nome completo">
+                    </div><!--campo-->
+
+                    <div class="campo">
+                        <label for="inpt_email">Email:</label>
+                        <input type="text" id="inpt_email" placeholder="Insira seu email">
+                    </div><!--campo-->
+
+                    <div class="campo">
+                        <label for="inpt_dtNasc">Data de Nascimento:</label>
+                        <input type="text" id="inpt_dtNasc" placeholder="dd/mm/aaaa">
+                    </div><!--campo-->
+
+                    <div class="campo">
+                        <label for="inpt_senha">Senha:</label>
+                        <input type="password" id="inpt_senha" placeholder="Crie uma senha">
+                    </div><!--campo-->
+                </div><!--inputs-->
+
+                <div class="botao">
+                    <a href="#" class="cadastro" onclick="cadastrar()">Cadastre-se</a>
+                </div><!--botao-->
+
+                <div class="jaPossui">
+                    <p>Já possui conta?<a href="login.html"> Logar-se</a></p>
+                </div>
+            </form>
+        </div><!--form-->
+
+    </div><!--container-->
+
+</body>
+<script>
+    function cadastrar() {
+        let campos = [inpt_nome.value, inpt_email.value, inpt_dtNasc.value, inpt_senha.value];
+        let campoVazio = false;
+
+        for(let indice = 0; indice < campos.length; indice++){
+            if(campos[indice] == ''){
+                campoVazio = true;
+            }
+        }
+
+        if(campoVazio == true){
+            alert('ⓘ Todos os campos devem ser preenchidos')
+        }
+    }
+</script>
+
+</html>
