@@ -52,19 +52,58 @@
 
 </body>
 <script>
-    function logar() {
-        let campos = [inpt_email.value, inpt_senha.value];
-        let campoVazio = false;
+   function logar() {
+    let email = inpt_email.value;
+    let senha = inpt_senha.value;
 
-        for(let indice = 0; indice < campos.length; indice++){
-            if(campos[indice] == ''){
-                campoVazio = true;
-            }
-        }
+    let campos = [email, senha];
+    let campoVazio = false;
 
-        if(campoVazio == true){
-            alert('ⓘ Todos os campos devem ser preenchidos')
+    for (let indice = 0; indice < campos.length; indice++) {
+        if (campos[indice] == '') {
+            campoVazio = true;
         }
     }
+
+    if (campoVazio == true) {
+        alert('ⓘ Todos os campos devem ser preenchidos');
+        return;
+    }
+
+    fetch('http://localhost:3333/usuarios/autenticar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            emailServer: email,
+            senhaServer: senha
+        })
+    })
+    .then(function(resposta) {
+        if (resposta.ok) {
+            return resposta.json();
+        } else {
+            alert('Email e/ou senha inválidos!');
+        }
+    })
+    .then(function(usuarioLogado) {
+        if (usuarioLogado) {
+            // ✅ tudo dentro do .then, onde usuarioLogado existe!
+            console.log('Usuário logado:', usuarioLogado);
+
+            sessionStorage.setItem('idUsuario', usuarioLogado.idUsuario);
+            sessionStorage.setItem('nomeUsuario', usuarioLogado.nomeCompleto);
+            sessionStorage.setItem('emailUsuario', usuarioLogado.email);
+
+            alert('Login realizado com sucesso! Bem-vinda, ' + usuarioLogado.nomeCompleto + '!');
+            window.location.href = 'index.html';
+        }
+    })
+    .catch(function(erro) {
+        console.log('Erro:', erro);
+        alert('Não foi possível conectar com o servidor.');
+    });
+}
 </script>
 </html>

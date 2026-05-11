@@ -39,7 +39,7 @@
 
                     <div class="campo">
                         <label for="inpt_dtNasc">Data de Nascimento:</label>
-                        <input type="text" id="inpt_dtNasc" placeholder="dd/mm/aaaa">
+                        <input type="date" id="inpt_dtNasc">
                     </div><!--campo-->
 
                     <div class="campo">
@@ -62,20 +62,52 @@
 
 </body>
 <script>
-    function cadastrar() {
-        let campos = [inpt_nome.value, inpt_email.value, inpt_dtNasc.value, inpt_senha.value];
-        let campoVazio = false;
+   function cadastrar() {
+    let nome = inpt_nome.value;
+    let email = inpt_email.value;
+    let dtNasc = inpt_dtNasc.value;
+    let senha = inpt_senha.value;
 
-        for(let indice = 0; indice < campos.length; indice++){
-            if(campos[indice] == ''){
-                campoVazio = true;
-            }
-        }
+    let campos = [nome, email, dtNasc, senha];
+    let campoVazio = false;
 
-        if(campoVazio == true){
-            alert('ⓘ Todos os campos devem ser preenchidos')
+    for (let indice = 0; indice < campos.length; indice++) {
+        if (campos[indice] == '') {
+            campoVazio = true;
         }
     }
+
+    if (campoVazio == true) {
+        alert('ⓘ Todos os campos devem ser preenchidos');
+        return;
+    }
+
+    // Sem conversão! O type="date" já manda no formato certo
+    fetch('http://localhost:3333/usuarios/cadastrar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            nomeServer: nome,
+            emailServer: email,
+            dtNascServer: dtNasc,
+            senhaServer: senha
+        })
+    })
+    .then(function(resposta) {
+        if (resposta.ok) {
+            alert('Cadastro realizado com sucesso!');
+            window.location.href = 'login.html';
+        } else {
+            alert('Erro ao cadastrar. Tente novamente.');
+        }
+    })
+    .catch(function(erro) {
+        console.log('Erro:', erro);
+        alert('Não foi possível conectar com o servidor.');
+    });
+}
 </script>
 
 </html>
