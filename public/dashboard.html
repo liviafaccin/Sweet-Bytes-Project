@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Bytes - Dashboard</title>
     <link rel="stylesheet" href="assets/css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -35,57 +36,105 @@
 
         <p class="texto-pequeno">Seu perfil de confeiteiro é</p>
 
-        <h1>Confeiteiro Afetivo</h1>
+        <p class="texto-grande">Confeiteiro Afetivo</p>
 
     </div><!--perfil-->
 
     <hr class="linha">
 
-    <div class="kpis">
-        <!-- KPI 1 -->
-        <div class="card">
+    <div class="conteudo">
 
-            <p class="titulo-card">SEU ESTILO</p>
+        <div class="container-grafico">
+            <canvas id="myChart"></canvas>
+        </div><!--container-grafico-->
 
-            <h2>Cozinha com amor</h2>
+        <div class="kpis">
+            <!-- KPI 1 -->
+            <div class="card">
 
-            <p>
-                Você cozinha para cuidar das pessoas ao seu redor.
-                Cada receita é um abraço.
-            </p>
+                <p class="titulo-card">SEU ESTILO</p>
 
-        </div><!--card-->
+                <h2>Cozinha com amor</h2>
 
-        <!-- KPI 2 -->
-        <div class="card">
+                <p>
+                    Você cozinha para cuidar das pessoas ao seu redor.
+                    Cada receita é um abraço.
+                </p>
 
-            <p class="titulo-card">PONTO FORTE</p>
+            </div><!--card-->
 
-            <h2>Conexão emocional</h2>
+            <!-- KPI 2 -->
+            <div class="card">
 
-            <p>
-                Seus doces criam memórias afetivas e momentos especiais
-                para quem você ama.
-            </p>
+                <p class="titulo-card">PONTO FORTE</p>
 
-        </div><!--card-->
+                <h2>Conexão emocional</h2>
 
-        <!-- KPI 3 -->
-        <div class="card">
+                <p>
+                    Seus doces criam memórias afetivas e momentos especiais
+                    para quem você ama.
+                </p>
 
-            <p class="titulo-card">DICA PARA VOCÊ</p>
+            </div><!--card-->
 
-            <h2>Personalize suas receitas</h2>
+            <!-- KPI 3 -->
+            <div class="card">
 
-            <p>
-                Adicione um toque pessoal: um bilhetinho,
-                uma embalagem bonita ou o sabor favorito
-                de quem vai receber.
-            </p>
+                <p class="titulo-card">DICA PARA VOCÊ</p>
 
-        </div><!--card-->
-    </div><!--kpis-->
+                <h2>Personalize suas receitas</h2>
+
+                <p>
+                    Adicione um toque pessoal: um bilhetinho,
+                    uma embalagem bonita ou o sabor favorito
+                    de quem vai receber.
+                </p>
+
+            </div><!--card-->
+        </div><!--kpis-->
+
+    </div><!--conteudo-->
 
 </body>
 
 </html>
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Confeiteiro Afetivo', 'Doce Empreendedor', 'Chef Criativo', 'Confeiteiro Wellness', 'Mestre da Praticidade'],
+            datasets: [{
+                data: [60, 20, 40, 0, 0],
+                backgroundColor: [
+                    '#f4a7b9',  // rosa claro - Confeiteiro Afetivo
+                    '#ae3656',  // rosa escuro - Doce Empreendedor
+                    '#7a8fa6',  // azul acinzentado - Chef Criativo
+                    '#e8829a',  // rosa médio - Confeiteiro Wellness
+                    '#5e4a5a'   // vinho escuro - Mestre da Praticidade
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        stepSize: 20,
+                        callback: function(valores){
+                            return valores + '%'
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
