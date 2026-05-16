@@ -13,7 +13,7 @@
     <div class="navbar">
         <div class="links">
             <div class="logo">
-                <img src="assets/imagens/logo principal.png" alt="">
+                <img src="assets/imagens/logo-sweet-bytes.png" alt="">
             </div>
             <a class="inicio" href="index.html">Home</a>
             <a class="historia" href="nossaHistoria copy.html">Nossa História</a>
@@ -36,7 +36,7 @@
 
         <p class="texto-pequeno">Seu perfil de confeiteiro é</p>
 
-        <p class="texto-grande">Confeiteiro Afetivo</p>
+        <p class="texto-grande" id="perfil">Carregando...</p>
 
     </div><!--perfil-->
 
@@ -99,42 +99,91 @@
 
 </html>
 <script>
-    const ctx = document.getElementById('myChart');
+    window.onload = function () {
+        obterDadosGrafico();
+    }
 
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Confeiteiro Afetivo', 'Doce Empreendedor', 'Chef Criativo', 'Confeiteiro Wellness', 'Mestre da Praticidade'],
-            datasets: [{
-                data: [60, 20, 40, 0, 0],
-                backgroundColor: [
-                    '#f4a7b9',  // rosa claro - Confeiteiro Afetivo
-                    '#ae3656',  // rosa escuro - Doce Empreendedor
-                    '#7a8fa6',  // azul acinzentado - Chef Criativo
-                    '#e8829a',  // rosa médio - Confeiteiro Wellness
-                    '#5e4a5a'   // vinho escuro - Mestre da Praticidade
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            plugins: {
-                legend: {
-                    display: false
-                }
+    function obterDadosGrafico() {
+        fetch("http://localhost:3333/quiz/resultado/1")
+            .then(function (response) {
+                return response.json()
+            })
+
+            .then(function (resposta) {
+                console.log('Dados recebidos da API:', resposta);
+
+                let dados = resposta[0];
+                plotarGrafico(dados);
+                atualizarPerfil(dados);
+            })
+            .catch(function (erro) {
+                console.log('Erro ao buscar dados:', erro);
+            });
+    }
+
+    function plotarGrafico(dados) {
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Confeiteiro Afetivo', 'Doce Empreendedor', 'Chef Criativo', 'Confeiteiro Wellness', 'Mestre da Praticidade'],
+                datasets: [{
+                    data: [dados.confeiteiroAfetivo, dados.doceEmpreendedor, dados.chefCriativo, dados.confeiteiroWellness, dados.mestreDaPraticidade],
+                    backgroundColor: [
+                        '#f4a7b9',  // rosa claro - Confeiteiro Afetivo
+                        '#ae3656',  // rosa escuro - Doce Empreendedor
+                        '#7a8fa6',  // azul - Chef Criativo
+                        '#e8829a',  // rosa médio - Confeiteiro Wellness
+                        '#5e4a5a'   // vinho - Mestre da Praticidade
+                    ],
+                    borderWidth: 1
+                }]
             },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 100,
-                    ticks: {
-                        stepSize: 20,
-                        callback: function(valores){
-                            return valores + '%'
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            stepSize: 1
                         }
                     }
                 }
             }
+        })
+    }
+
+    function atualizarPerfil(dados) {
+        let perfil = 'Confeiteiro Afetivo';
+        let maior = dados.confeiteiroAfetivo;
+
+        if (dados.doceEmpreendedor > maior) {
+            perfil = 'Doce Empreendedor';
+            maior = dados.doceEmpreendedor;
         }
-    });
+
+        if (dados.chefCriativo > maior) {
+            perfil = 'Chef Criativo';
+            maior = dados.chefCriativo;
+        }
+
+        if (dados.confeiteiroWellness > maior) {
+            perfil = 'Confeiteiro Wellness';
+            maior = dados.confeiteiroWellness;
+        }
+
+        if (dados.mestreDaPraticidade > maior) {
+            perfil = 'Mestre da Praticidade';
+            maior = dados.mestreDaPraticidade;
+        }
+
+        document.getElementById('perfil').innerHTML = perfil;
+        localStorage.setItem('perfilDoce', perfil);
+    }
 </script>

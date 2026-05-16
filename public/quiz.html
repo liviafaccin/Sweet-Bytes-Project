@@ -12,7 +12,7 @@
     <div class="navbar">
         <div class="links">
             <div class="logo">
-                <img src="assets/imagens/logo principal.png" alt="">
+                <img src="assets/imagens/logo-sweet-bytes.png" alt="">
             </div>
             <a class="inicio" href="index.html">Home</a>
             <a class="historia" href="nossaHistoria.html">Nossa História</a>
@@ -104,7 +104,7 @@
         </div><!--quinta--><br>
 
         <div class="resultado">
-            <a href="dashboard.html"><button onclick="ver()">Ver Resultado</button></a>
+            <button onclick="ver()">Ver Resultado</button>
         </div>
     </div><!--perguntas-->
 </body>
@@ -191,8 +191,39 @@
 
         // salva no localStorage para a dashboard ler
         localStorage.setItem('perfilDoce', vencedor);
-    }
 
+        // monta o objeto com os pontos de cada perfil
+        var dadosQuiz = {
+            fkUsuario: 1, // por enquanto fixo, depois virá do login
+            confeiteiroAfetivo: afetivo,
+            doceEmpreendedor: empreendedor,
+            chefCriativo: criativo,
+            confeiteiroWellness: wellness,
+            mestreDaPraticidade: praticidade
+        };
+
+        // envia os dados para a API salvar no banco
+        fetch("http://localhost:3333/quiz/salvar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dadosQuiz)
+        })
+        .then(function(resposta) {
+            return resposta.text();
+        })
+        .then(function(texto) {
+            console.log("API respondeu: " + texto);
+            // só redireciona para a dashboard depois que a API salvar
+            window.location.href = "dashboard.html";
+        })
+        .catch(function(erro) {
+            console.log("Erro ao salvar no banco: " + erro);
+            // mesmo com erro, redireciona para a dashboard
+            window.location.href = "dashboard.html";
+        });
+    }
 </script>
 
 </html>
