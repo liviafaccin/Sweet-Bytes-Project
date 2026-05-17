@@ -54,11 +54,10 @@
 
                 <p class="titulo-card">SEU ESTILO</p>
 
-                <h2>Cozinha com amor</h2>
+                <h2 id="kpi-estilo">Carregando...</h2>
 
-                <p>
-                    Você cozinha para cuidar das pessoas ao seu redor.
-                    Cada receita é um abraço.
+                <p id="kpi-estilo-desc">
+                    Carregando...
                 </p>
 
             </div><!--card-->
@@ -68,11 +67,10 @@
 
                 <p class="titulo-card">PONTO FORTE</p>
 
-                <h2>Conexão emocional</h2>
+                <h2 id="kpi-ponto">Carregando...</h2>
 
-                <p>
-                    Seus doces criam memórias afetivas e momentos especiais
-                    para quem você ama.
+                <p id="kpi-ponto-desc">
+                    Carregando...
                 </p>
 
             </div><!--card-->
@@ -82,12 +80,10 @@
 
                 <p class="titulo-card">DICA PARA VOCÊ</p>
 
-                <h2>Personalize suas receitas</h2>
+                <h2 id="kpi-dica">Carregando...</h2>
 
-                <p>
-                    Adicione um toque pessoal: um bilhetinho,
-                    uma embalagem bonita ou o sabor favorito
-                    de quem vai receber.
+                <p id="kpi-dica-desc">
+                    Carregando...
                 </p>
 
             </div><!--card-->
@@ -129,7 +125,14 @@
             data: {
                 labels: ['Confeiteiro Afetivo', 'Doce Empreendedor', 'Chef Criativo', 'Confeiteiro Wellness', 'Mestre da Praticidade'],
                 datasets: [{
-                    data: [dados.confeiteiroAfetivo, dados.doceEmpreendedor, dados.chefCriativo, dados.confeiteiroWellness, dados.mestreDaPraticidade],
+                    data: [
+                        (dados.confeiteiroAfetivo / 5) * 100,
+                        (dados.doceEmpreendedor / 5) * 100,
+                        (dados.chefCriativo / 5) * 100,
+                        (dados.confeiteiroWellness / 5) * 100,
+                        (dados.mestreDaPraticidade / 5) * 100
+                    ],
+
                     backgroundColor: [
                         '#f4a7b9',  // rosa claro - Confeiteiro Afetivo
                         '#ae3656',  // rosa escuro - Doce Empreendedor
@@ -151,7 +154,11 @@
                         beginAtZero: true,
                         max: 100,
                         ticks: {
-                            stepSize: 1
+                            stepSize: 20,
+
+                            callback: function (valor) {
+                                return valor + '%'
+                            }
                         }
                     }
                 }
@@ -162,6 +169,12 @@
     function atualizarPerfil(dados) {
         let perfil = 'Confeiteiro Afetivo';
         let maior = dados.confeiteiroAfetivo;
+        let kpi1Titulo = document.getElementById('kpi-estilo')
+        let kpi1Desc = document.getElementById('kpi-estilo-desc')
+        let kpi2Titulo = document.getElementById('kpi-ponto')
+        let kpi2Desc = document.getElementById('kpi-ponto-desc')
+        let kpi3Titulo = document.getElementById('kpi-dica')
+        let kpi3Desc = document.getElementById('kpi-dica-desc')
 
         if (dados.doceEmpreendedor > maior) {
             perfil = 'Doce Empreendedor';
@@ -185,5 +198,52 @@
 
         document.getElementById('perfil').innerHTML = perfil;
         localStorage.setItem('perfilDoce', perfil);
+
+        if (perfil == 'Confeiteiro Afetivo') {
+
+            kpi1Titulo.innerHTML = 'Cozinha com amor';
+            kpi1Desc.innerHTML = 'Você cozinha para cuidar das pessoas ao seu redor. Cada receita é um abraço.';
+            kpi2Titulo.innerHTML = 'Conexão emocional';
+            kpi2Desc.innerHTML = 'Seus doces criam memórias afetivas e momentos especiais para quem você ama.';
+            kpi3Titulo.innerHTML = 'Personalize suas receitas';
+            kpi3Desc.innerHTML = 'Adicione um toque pessoal: um bilhetinho, uma embalagem bonita ou o sabor favorito de quem vai receber.';
+
+        } else if (perfil == 'Doce Empreendedor') {
+
+            kpi1Titulo.innerHTML = 'Cozinha para lucrar';
+            kpi1Desc.innerHTML = 'Você enxerga a confeitaria como um negócio e transforma receitas em oportunidades.';
+            kpi2Titulo.innerHTML = 'Visão de negócio';
+            kpi2Desc.innerHTML = 'Você sabe precificar, divulgar e encantar clientes com seus produtos.';
+            kpi3Titulo.innerHTML = 'Invista na apresentação';
+            kpi3Desc.innerHTML = 'Uma embalagem bonita e uma identidade visual consistente valem tanto quanto o sabor.';
+
+        } else if (perfil == 'Chef Criativo') {
+
+            kpi1Titulo.innerHTML = 'Cozinha para criar';
+            kpi1Desc.innerHTML = 'Você trata a confeitaria como arte e adora experimentar técnicas e decorações.';
+            kpi2Titulo.innerHTML = 'Inovação e estética';
+            kpi2Desc.innerHTML = 'Seus doces são visualmente incríveis e sempre surpreendem quem vê.';
+            kpi3Titulo.innerHTML = 'Explore novas técnicas';
+            kpi3Desc.innerHTML = 'Tente uma nova decoração por semana. A prática vai elevar ainda mais o seu nível criativo.';
+
+        } else if (perfil == 'Confeiteiro Wellness') {
+
+            kpi1Titulo.innerHTML = 'Cozinha para se cuidar';
+            kpi1Desc.innerHTML = 'Você usa a confeitaria como forma de relaxar e cuidar do seu bem-estar.';
+            kpi2Titulo.innerHTML = 'Equilíbrio e saúde';
+            kpi2Desc.innerHTML = 'Você busca receitas saudáveis que respeitam o corpo sem abrir mão do prazer.';
+            kpi3Titulo.innerHTML = 'Explore substitutos saudáveis';
+            kpi3Desc.innerHTML = 'Experimente trocar o açúcar refinado por mel ou tâmaras nas suas receitas favoritas.';
+
+        } else if (perfil == 'Mestre da Praticidade') {
+
+            kpi1Titulo.innerHTML = 'Cozinha no modo turbo';
+            kpi1Desc.innerHTML = 'Você valoriza receitas rápidas e práticas, sem abrir mão do sabor.';
+            kpi2Titulo.innerHTML = 'Eficiência na cozinha';
+            kpi2Desc.innerHTML = 'Você consegue fazer sobremesas deliciosas em pouquíssimo tempo.';
+            kpi3Titulo.innerHTML = 'Organize seus ingredientes';
+            kpi3Desc.innerHTML = 'Deixe os ingredientes mais usados sempre à mão. Isso vai deixar sua cozinha ainda mais rápida.';
+
+        }
     }
 </script>
