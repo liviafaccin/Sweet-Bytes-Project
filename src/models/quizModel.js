@@ -31,8 +31,29 @@ function salvarResultado(confeiteiroAfetivo, doceEmpreendedor, chefCriativo, con
     return database.executar(instrucao);
 }
 
+function buscarUltimoResultado(fkUsuario) {
+
+    var instrucao = `
+        SELECT 
+            rd.confeiteiroAfetivo,
+            rd.doceEmpreendedor,
+            rd.chefCriativo,
+            rd.confeiteiroWellness,
+            rd.mestreDaPraticidade
+        FROM resultadoDash rd
+        JOIN quiz q ON rd.fkQuiz = q.idQuiz
+        WHERE q.fkUsuario = ${fkUsuario}
+        ORDER BY rd.idResultadoDash DESC
+        LIMIT 1;
+    `;
+
+    console.log("Executando SQL: " + instrucao);
+    return database.executar(instrucao);
+}
+
 // Exporta as funções para o controller conseguir usar
 module.exports = {
     salvarQuiz,
-    salvarResultado
+    salvarResultado,
+    buscarUltimoResultado
 };
