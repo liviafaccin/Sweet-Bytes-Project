@@ -108,15 +108,95 @@ body {
     transform: scale(1.03);
 }
 
-.video{
+/* VIDEO */
+.videoFamilia {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 100px;
 }
 
-video{
-    width: 100%;
-    height: 100%;
+.videoFamilia video {
+    width: 85%;
+    border-radius: 30px;
 }
+
+/* MISSÃO */
+.missao {
+    width: 85%;
+    margin: 80px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+/* texto */
+.texto-missao {
+    width: 30%;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.titulo img {
+    height: 95px;
+}
+
+/* linha ondulada rosa */
+.destaque {
+    margin-top: -50px;
+    margin-bottom: 20px;
+    margin-left: 50%;
+}
+
+.destaque img {
+    width: 140px;
+    height: auto;
+}
+
+/* titulo */
+.titulo h1 {
+    color: #000;
+    font-size: 25px;
+}
+
+.texto-missao p {
+    font-size: 17px;
+    line-height: 1.3;
+    margin-bottom: 2px;
+    color: #1d1d1d;
+}
+
+/* card imagem */
+.imagem-missao {
+    position: relative;
+    width: 35%;
+}
+
+.imagem-missao img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* card frase */
+.card-frase {
+    position: absolute; 
+    bottom: -30px;
+    right: -30px;
+    background-color: #ffe0e7;
+    border-radius: 15px;
+    padding: 15px 20px;
+    width: 200px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+ 
+.card-frase p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #1d1d1d;
+    line-height: 1.4;
+}
+
