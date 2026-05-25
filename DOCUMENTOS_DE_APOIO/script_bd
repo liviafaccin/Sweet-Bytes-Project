@@ -1,0 +1,45 @@
+create database sweetBytes;
+use sweetBytes; 
+show tables;
+create table usuario (
+    idUsuario int primary key auto_increment,
+    nomeCompleto varchar(100),
+    email varchar(200) unique,
+    dtNasc date,
+    senha varchar(45)
+);
+
+create table receitas (
+    idReceitas int primary key auto_increment,
+    nome varchar(45),
+    ingredientes varchar(1000),
+    modoDePreparo varchar(3000)
+);
+
+create table quiz (
+    idQuiz int primary key auto_increment,
+    dtRealizacao datetime default current_timestamp,
+    fkUsuario int,
+	constraint fkUsuarioQuiz
+		foreign key (fkUsuario)
+        references usuario(idUsuario)
+);
+
+create table resultadoDash (
+	idResultadoDash int primary key auto_increment,
+    confeiteiroAfetivo int,
+    doceEmpreendedor int,
+    chefCriativo int,
+    confeiteiroWellness int,
+    mestreDaPraticidade int,
+    fkQuiz int,
+    constraint fkResultadoQuiz
+		foreign key (fkQuiz)
+        references quiz(idQuiz)
+);
+
+select * from usuario;
+show tables;
+
+SELECT * FROM quiz;
+SELECT * FROM resultadoDash;

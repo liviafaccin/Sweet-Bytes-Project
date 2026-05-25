@@ -112,10 +112,11 @@ body {
 .videoFamilia {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .videoFamilia video {
-    width: 85%;
+    width: 80%;
     border-radius: 30px;
 }
 
