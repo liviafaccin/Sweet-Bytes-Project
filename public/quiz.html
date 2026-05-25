@@ -15,7 +15,7 @@
                 <img src="assets/imagens/logo-sweet-bytes.png" alt="">
             </div>
             <a class="inicio" href="index.html">Home</a>
-            <a class="historia" href="nossaHistoria.html">Nossa História</a>
+            <a class="historia" href="historia.html">Nossa História</a>
             <a class="quiz" href="quiz.html">Quiz</a>
             <a class="dash" href="dashboard.html">Dashboard</a>
         </div><!--links-->
@@ -192,9 +192,11 @@
         // salva no localStorage para a dashboard ler
         localStorage.setItem('perfilDoce', vencedor);
 
+        const fkUsuario = sessionStorage.idUsuario
+
         // monta o objeto com os pontos de cada perfil
         var dadosQuiz = {
-            fkUsuario: 1, // por enquanto fixo, depois virá do login
+            fkUsuario: `${fkUsuario}`, // por enquanto fixo, depois virá do login
             confeiteiroAfetivo: afetivo,
             doceEmpreendedor: empreendedor,
             chefCriativo: criativo,
@@ -203,7 +205,7 @@
         };
 
         // envia os dados para a API salvar no banco
-        fetch("http://localhost:3333/quiz/salvar", {
+        fetch("/quiz/salvar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
