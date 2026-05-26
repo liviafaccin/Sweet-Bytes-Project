@@ -182,6 +182,11 @@ body {
 .imagem-missao {
     position: relative;
     width: 50%;
+    transition: .3s;
+}
+
+.imagem-missao:hover {
+    transform: scale(1.1);
 }
 
 .imagem-missao img {
