@@ -128,16 +128,27 @@ body {
     border: none;
     height: 3px;
     background-color: #7a8fa6;
+    margin-bottom: 50px;
 }
 
 /* DESCRICAO */
+.container-desc {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    gap: 50px;
+}
+
+.foto img {
+    height: 350px;
+}
+
 .descricao {
     text-align: justify;
     font-size: 16px;
     font-weight: 700;
     color: #333;
     line-height: 1.8;
-    margin-bottom: 35px;
 }
 
 /* DIFICULDADE E TEMPO */
@@ -196,34 +207,6 @@ body {
     font-weight: 700;
     color: #333;
     line-height: 1.6;
-}
-
-/* CARDS - DICA E GIF */
-.card {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 60px;
-}
-
-.card img {
-    height: 195px;
-}
-
-.card-dica {
-    background-color: #ffe0e7;
-    border-radius: 15px;
-    padding: 15px 20px;
-    width: 220px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card-dica p {
-    font-size: 16px;
-    font-weight: bold;
-    color: #1d1d1d;
-    line-height: 1.4;
 }
 
 /* FOOTER */
