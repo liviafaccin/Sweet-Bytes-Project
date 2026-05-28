@@ -13,10 +13,8 @@ function autenticar(req, res) {
         usuarioModel.autenticar(email, senha)
             .then(function (resultado) {
                 if (resultado.length == 1) {
-                    // Encontrou o usuário, retorna os dados dele
                     res.status(200).json(resultado[0]);
                 } else if (resultado.length == 0) {
-                    // Não encontrou nenhum usuário
                     res.status(403).send("Email e/ou senha inválidos!");
                 }
             })

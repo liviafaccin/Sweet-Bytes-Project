@@ -72,7 +72,7 @@
             <select id="select_p3">
                 <option value="#">Selecione uma opção</option>
                 <option value="vo">Bolo de vó</option>
-                <option value="cake">Bento cake estiloso</option>
+                <option value="cake">Cupcake estiloso</option>
                 <option value="venda">Brownie para vender</option>
                 <option value="fit">Cookie fit</option>
                 <option value="15min">Receita de 15 minutos</option>
@@ -110,24 +110,20 @@
 </body>
 <script>
     function ver() {
-        // selects
         let primeira = select_p1.value
         let segunda = select_p2.value
         let terceira = select_p3.value
         let quarta = select_p4.value
         let quinta = select_p5.value
 
-        // perfis
         let afetivo = 0;
         let criativo = 0;
         let empreendedor = 0;
         let wellness = 0;
         let praticidade = 0;
 
-        // perfil do usuario
         let vencedor = '';
 
-        // cenário errado
         if (primeira == '#' || segunda == '#' || terceira == '#' || quarta == '#' || quinta == '#') {
             alert('Insira valores válidos');
             return;
@@ -170,9 +166,6 @@
         if (quinta == 'organizada') { praticidade++; }
 
 
-
-        // vencedor
-
         if (afetivo >= criativo && afetivo >= empreendedor && afetivo >= wellness && afetivo >= praticidade) {
             vencedor = 'Confeiteiro afetivo';
 
@@ -189,14 +182,12 @@
             vencedor = 'Mestre da Praticidade';
         }
 
-        // salva no localStorage para a dashboard ler
         localStorage.setItem('perfilDoce', vencedor);
 
         const fkUsuario = sessionStorage.idUsuario
 
-        // monta o objeto com os pontos de cada perfil
         var dadosQuiz = {
-            fkUsuario: `${fkUsuario}`, // por enquanto fixo, depois virá do login
+            fkUsuario: `${fkUsuario}`,
             confeiteiroAfetivo: afetivo,
             doceEmpreendedor: empreendedor,
             chefCriativo: criativo,
@@ -204,7 +195,6 @@
             mestreDaPraticidade: praticidade
         };
 
-        // envia os dados para a API salvar no banco
         fetch("/quiz/salvar", {
             method: "POST",
             headers: {
@@ -217,12 +207,10 @@
         })
         .then(function(texto) {
             console.log("API respondeu: " + texto);
-            // só redireciona para a dashboard depois que a API salvar
             window.location.href = "dashboard.html";
         })
         .catch(function(erro) {
             console.log("Erro ao salvar no banco: " + erro);
-            // mesmo com erro, redireciona para a dashboard
             window.location.href = "dashboard.html";
         });
     }

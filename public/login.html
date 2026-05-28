@@ -34,7 +34,7 @@
 
                     <div class="campo">
                         <label for="inpt_senha">Senha:</label>
-                        <input type="password" id="inpt_senha" placeholder="Crie uma senha">
+                        <input type="password" id="inpt_senha" placeholder="Insira sua senha">
                     </div><!--campo-->
                 </div><!--inputs-->
 
@@ -95,7 +95,7 @@
             sessionStorage.setItem('nomeUsuario', usuarioLogado.nomeCompleto);
             sessionStorage.setItem('emailUsuario', usuarioLogado.email);
 
-            alert('Login realizado com sucesso! Bem-vinda, ' + usuarioLogado.nomeCompleto + '!');
+            alert('Login realizado com sucesso! Bem-vindo(a), ' + usuarioLogado.nomeCompleto + '!');
             window.location.href = 'quiz.html';
         }
     })
